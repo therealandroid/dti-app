@@ -10,10 +10,9 @@ import io.reactivex.Single
 import java.util.*
 import kotlin.collections.HashMap
 
-class LoginRepository {
+open class LoginRepository(var authenticationNetworkDataSource: IAuthenticationDataSource,
+                      var userPersistenceDataSource: IUserPersistenceDataSource) {
 
-    private val authenticationNetworkDataSource: IAuthenticationDataSource = AuthenticationNetworkDataSource()
-    private val userPersistenceDataSource: IUserPersistenceDataSource = UserPersistenceDataSource()
 
     //A better approach is to use a mapper to avoid passing models from network module to the App module
     //but to make it more simple I choose to continue using the same model

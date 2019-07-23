@@ -3,6 +3,7 @@ package com.therealdroid.github.company.login
 import com.therealdroid.github.company.R
 import com.therealdroid.github.company.register.RegisterRepository
 import com.therealdroid.github.network.implementation.login.models.ApiResponse
+import com.therealdroid.github.network.implementation.login.models.ApiUser
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -15,6 +16,7 @@ class LoginViewModel(private val loginRepository: LoginRepository) {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
     }
+
 
     //Client side validation
     fun formDataChanged(username: String, password: String): Observable<LoginFormState> {

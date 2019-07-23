@@ -6,19 +6,29 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.dti.persistency.implementation.login.IUserPersistenceDataSource
+import com.dti.persistency.implementation.login.UserPersistenceDataSource
 import com.therealdroid.github.company.R
 import com.therealdroid.github.company.extensions.afterTextChanged
 import com.therealdroid.github.company.extensions.hideSoftKeyboard
 import com.therealdroid.github.company.extensions.loadImage
 import com.therealdroid.github.company.home.HomeActivity
 import com.therealdroid.github.company.register.RegisterActivity
+import com.therealdroid.github.network.implementation.login.AuthenticationNetworkDataSource
+import com.therealdroid.github.network.implementation.login.IAuthenticationDataSource
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_login.*
 
 
 class LoginActivity : AppCompatActivity() {
 
-    private var loginViewModel = LoginViewModel(LoginRepository())
+    private var loginViewModel = LoginViewModel(
+        LoginRepository(
+            AuthenticationNetworkDataSource(),
+            UserPersistenceDataSource()
+        )
+    )
+
     private var compositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,7 +87,8 @@ class LoginActivity : AppCompatActivity() {
                     //An unhandled server parsing or network exception occurred
                     //developer error
                     //An unhandled server parsing or network exception occurred
-                    showLoginFailed(it.localizedMessage)
+                    //internet connection
+                    showLoginFailed(getString(R.string.server_unavailable))
                 })
         )
     }

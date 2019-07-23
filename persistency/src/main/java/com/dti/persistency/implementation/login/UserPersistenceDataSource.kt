@@ -3,7 +3,7 @@ package com.dti.persistency.implementation.login
 import com.dti.persistency.implementation.login.realm.entities.UserEntity
 import com.dti.persistency.implementation.login.realm.dao.UserDao
 
-class UserPersistenceDataSource : IUserPersistenceDataSource {
+open class UserPersistenceDataSource : IUserPersistenceDataSource {
 
     private var userDao = UserDao()
 

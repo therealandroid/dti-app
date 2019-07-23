@@ -11,13 +11,14 @@ import com.therealdroid.github.company.R
 import com.therealdroid.github.company.extensions.afterTextChanged
 import com.therealdroid.github.company.extensions.hideSoftKeyboard
 import com.therealdroid.github.company.login.LoginActivity
+import com.therealdroid.github.network.implementation.login.AuthenticationNetworkDataSource
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_register.*
 
 
 class RegisterActivity : AppCompatActivity() {
 
-    private var registerViewModel = RegisterViewModel(RegisterRepository())
+    private var registerViewModel = RegisterViewModel(RegisterRepository(AuthenticationNetworkDataSource()))
     private var compositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,7 +79,8 @@ class RegisterActivity : AppCompatActivity() {
                 {
                     //developer error
                     //An unhandled server parsing or network exception occurred
-                    showRegisterFailed(it.localizedMessage)
+                    //internet connection
+                    showRegisterSuccess(getString(R.string.server_unavailable))
                 })
         )
     }
