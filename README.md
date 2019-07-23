@@ -18,3 +18,5 @@ The file is located in:
 5 - Run project.
 
 
+### Credentials
+You can find the credemtials in the server [documentation](https://github.com/therealandroid/dti-server/blob/master/README.md#todo)
