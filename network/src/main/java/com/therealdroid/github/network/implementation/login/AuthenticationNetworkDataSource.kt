@@ -9,7 +9,7 @@ import io.reactivex.Single
  * This class is responsible to handle networking operations
  *
  */
-class AuthenticationNetworkDataSource : IAuthenticationDataSource {
+open class AuthenticationNetworkDataSource : IAuthenticationDataSource {
 
     private val serviceRoute: AuthRoute = RetrofitManager.provideService(AuthRoute::class.java)
 
