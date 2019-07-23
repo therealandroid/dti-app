@@ -13,6 +13,7 @@
 - MVVM
 - Repository
 
+
 ### Setup project
 
  1 - Clone this repository
@@ -52,3 +53,9 @@ I’ve followed the same guideline LiveData uses with ViewModel, but I’m more 
 
 - Reusable
 - Centralize application business logic
+
+#### To improve 
+
+- My tests are not working and I didn't had enough time to figure out the problem.  This [challenge](https://github.com/therealandroid/SkyScannerTest/tree/master/app/src/test/java/br/com/skyscannerapplication) have tests running.
+
+T_T
