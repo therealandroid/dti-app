@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Define all the reusable styles for the application -->
+
+
+    <style name="ButtonStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/shape_rounded_solid</item>
+    </style>
+
+    <style name="EditTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:textColorHint">@color/colorGray</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@drawable/shape_rounded</item>
+    </style>
+
+    <style name="TextViewStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorBlack50</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+
+
+</resources>
