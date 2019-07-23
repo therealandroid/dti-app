@@ -19,4 +19,4 @@ The file is located in:
 
 
 ### Credentials
-You can find the credemtials in the server [documentation](https://github.com/therealandroid/dti-server/blob/master/README.md#todo)
+You can find the credemtials in the server [documentation](https://github.com/therealandroid/dti-server/blob/master/README.md#login-credentials)
